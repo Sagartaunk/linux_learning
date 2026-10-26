@@ -1,0 +1,4 @@
+[    0.641119] mod: loading out-of-tree module taints kernel.
+[    0.642591] `mod` Module is loaded 
+[    0.642592] Loaded values are 1, 2 and 30 
+[    0.656866] `mod` exited 

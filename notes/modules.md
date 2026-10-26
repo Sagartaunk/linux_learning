@@ -25,3 +25,17 @@ load anyway with a `suspiciously returned` warning whereas in `Rust`
 the module would just fail to load on a negative `int` value. 
 The state lives scattered in file level consts whereas in Rust, the 
 state lives in `__MOD` static.
+
+## What does `obj-m` do ?
+It is a Kbuild variable that says to build a module as a lodable module
+and link it against `.ko`. 
+
+## What does `EXPORT_SYMBOL` do?
+`EXPORT_SYMBOL` makes a function publically available within the kernel to
+be called. 
+
+## What does `EXPORT_SYMBOL_GPL` promise, and to whom?
+It promises that the code is `GPL` compliant to the kernel. If a kernel is `tainted` 
+it means that it is running `non-gpl` code. 
+i.e the kernel will mark itself as `tainted` if the Symbols are not exported 
+via `EXPORT_SYMBOL_GPL`.
