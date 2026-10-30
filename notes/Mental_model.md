@@ -53,3 +53,36 @@ of bits.
 [2]: In `C`, if we try to write 20 to a `4-bit` filed (can only store upto 15), the extra
 bits are silently chopped of without warning which results in the accessor recieving 
 wrong value.
+
+### bitmap.rs
+Subsystems utilise bitmaps to track resources, manage flags and represent hardware layouts
+with minimal memory overhead. 
+
+###  bits.rs
+This module contains bit manupulation macros such as:
+- `impl_bit_fn` checks if the provided value is within bit range
+- `impl_genmask_fn` creates a contiguous bitmask for the given range by validating
+the range at runtime.
+
+It allows for the manupulation of bits mostly asserting if a certain value fills the 
+bit bounds. 
+
+### block.rs 
+exposes some const types to work with the block layer. 
+
+### bug.rs 
+Support for `BUG` and `WARN` functionality, exposes macros to create `warn` flags.
+
+### build_assert.rs
+Contains assertions types such as 
+- `static_assert!`
+- `const_assert!`
+- `build_assert!`
+
+### clk.rs
+Contains `clock` abstractions. 
+Allows management and setting of `frequency` of  components. Acts as a wrapper 
+over the `C` side of the code. 
+
+### configfs.rs
+Configfs is an in-memory pseudo filesystem for the configuration of kernel modules.
