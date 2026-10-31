@@ -86,3 +86,34 @@ over the `C` side of the code.
 
 ### configfs.rs
 Configfs is an in-memory pseudo filesystem for the configuration of kernel modules.
+
+### cpu.rs
+This module contains cpu controls such as assigning cpu (core) `id`, cpu number
+number of cores as well as which cpu is currently running the process 
+
+### cpufreq.rs
+This module contains cpu frequency scaling abi's and exposes types to do so.
+It utilises `clk.rs`.
+
+### cpumask.rs
+#### What is a cpumask?
+A cpu mask is a specialized bitmap structure used to represent, manipulate and
+trach set's of CPU's on a multi-core system. 
+
+The `cpumask.rs` module exposes abstractions for the `C` `struct cpumask`. 
+It always corresponds to a valid C `cpumask`. 
+
+### cred.rs 
+This module contains abstractions for the `C` struct `cred`.
+It reporesents the security credentials of a task or a file. Acting as the 
+central token for user authentication, privelage checks, capabilities, security modules
+and keyrings. 
+
+### debugfs.rs 
+It provides the kernel modules and drivers a mechanism to export debugging, profiling,
+and internal state information to userspace without having to write unsafe, manual 
+`C` wrappers. 
+
+### device.rs 
+It allows for device registration and driver bindings and also allows for private data 
+storage for drivers.
