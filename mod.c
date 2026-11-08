@@ -9,12 +9,14 @@
 #include <linux/module.h>
 #include <linux/printk.h>
 
+int something(int x);
+int gpl(int x);
 
 int something(int x) {return x+1;}
-EXPORT_SYMBOL(something);
+EXPORT_SYMBOL_GPL(something);
 
 int gpl(int x) {return x * 2 + 1;}
-EXPORT_SYMBOL(gpl);
+EXPORT_SYMBOL_GPL(gpl);
 
 static int __init mod_init(void){
     pr_info("`mod` Module is loaded \n");

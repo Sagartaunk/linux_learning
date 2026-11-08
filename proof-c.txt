@@ -1,4 +1,48 @@
-[    0.641119] mod: loading out-of-tree module taints kernel.
-[    0.642591] `mod` Module is loaded 
-[    0.642592] Loaded values are 1, 2 and 30 
-[    0.656866] `mod` exited 
+➜ ~/Documents/linux vng --run . --exec 'insmod /home/sagar/Documents/linux_learning/mod.ko; dmesg | tail -20; rmmod mod'
+[    0.159261]     virtme_chdir=home/sagar/Documents/linux
+[    0.162866] virtme-ng-init: mount devtmpfs -> /dev: EBUSY: Device or resource busy
+[    0.162881] virtme-ng-init: Setting hostname to virtme-ng...
+[    0.170996] virtme-ng-init: running systemd-tmpfiles
+[    0.227730] systemd-tmpfile (122) used greatest stack depth: 12360 bytes left
+[    0.227766] virtme-ng-init: Failed to copy files to /etc/crypttab: Permission denied
+               Failed to copy files to /etc/gshadow: Permission denied
+               Failed to copy files to /etc/shadow: Permission denied
+               Failed to copy files to /etc/libaudit.conf: Permission denied
+[    0.227773] virtme-ng-init: basic initialization done
+[    0.233153] virtme-ng-init (125) used greatest stack depth: 12104 bytes left
+[    0.238522] ip (128) used greatest stack depth: 12088 bytes left
+[    0.245048] virtme-ng-init: Starting systemd-udevd version 262.1-1-arch
+[    0.245052] virtme-ng-init: triggering udev coldplug
+[    0.275870] virtme-ng-init: waiting for udev to settle
+[    0.347200] virtme-ng-init: udev is done
+[    0.347755] virtme-ng-init: starting script
+[    0.361320] mod: loading out-of-tree module taints kernel.
+[    0.362455] `mod` Module is loaded
+[    0.362457] Loaded values are 1, 2 and 30
+➜ ~/Documents/linux
+
+
+TAINTED OUTPUT WITHOUT GPL LICENSE
+
+➜ ~/Documents/linux vng --run . --exec 'insmod /home/sagar/Documents/linux_learning/bad.ko; dmesg | tail -20; rmmod bad'
+[    0.289677] virtme-ng-init: Failed to copy files to /etc/crypttab: Permission denied
+               Failed to copy files to /etc/gshadow: Permission denied
+               Failed to copy files to /etc/shadow: Permission denied
+               Failed to copy files to /etc/libaudit.conf: Permission denied
+[    0.289680] virtme-ng-init: basic initialization done
+[    0.293060] virtme-ng-init (125) used greatest stack depth: 12104 bytes left
+[    0.295997] ip (127) used greatest stack depth: 12088 bytes left
+[    0.307195] virtme-ng-init: Starting systemd-udevd version 262.1-1-arch
+[    0.307199] virtme-ng-init: triggering udev coldplug
+[    0.337952] virtme-ng-init: waiting for udev to settle
+[    0.391132] virtme-ng-init: udev is done
+[    0.391634] virtme-ng-init: starting script
+[    0.400471] bad: loading out-of-tree module taints kernel.
+[    0.400474] bad: module license 'BSD' taints kernel.
+[    0.400475] Disabling lock debugging due to kernel taint
+[    0.400476] bad: module license taints kernel.
+[    0.402228] Bad module is loaded /n
+[    0.402230] This should stain the kernel /n
+[    0.402230] Loaded sum with value 5 133
+[    0.402231] Loaded multiply with value 5 100
+➜ ~/Documents/linux

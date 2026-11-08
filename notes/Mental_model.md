@@ -117,3 +117,7 @@ and internal state information to userspace without having to write unsafe, manu
 ### device.rs 
 It allows for device registration and driver bindings and also allows for private data 
 storage for drivers.
+
+### device_id.rs
+Corresponds to c `device_id` type. Each bus/subsystem that matches device and drivers
+through a bus/subsystem specific ID utilised this crate.
