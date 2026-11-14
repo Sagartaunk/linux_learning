@@ -121,3 +121,68 @@ storage for drivers.
 ### device_id.rs
 Corresponds to c `device_id` type. Each bus/subsystem that matches device and drivers
 through a bus/subsystem specific ID utilised this crate.
+
+### devres.rs
+Repesents abstractions for the kernel's device resource management.
+
+### dma.rs
+Contains direct memory access `dma` abstractions.
+
+### driver.rs
+Generic support driver for different busses.
+
+### error.rs
+Defines kernel error codes. 
+
+### faux.rs
+Provides abstractions for working with faux devices in kernel modules.
+
+### firmware.rs
+Firmware abstractions.
+
+### fmt.rs
+Formatting utilities (potential replacement for core::fmt)
+
+### fs.rs 
+Would contain filesystem but is currently empty. (They added it as a placeholder ig)
+
+### fwctl.rs
+Abstractions to send commands from userspace to firmware in a standardised way.
+
+### gpu.rs
+(Again empty) is intended to contain generic abstractions to enable gpu ig.
+
+### i2c.rs
+I2C driver subsystem.
+
+### id_pool.rs
+Rust api for an id pool uses `Bitmapvec`.
+
+### impl_flags.rs
+common helper for declaring bitflag and bitmask types.
+
+### init.rs
+Extensions for the `pin-init` crate.
+
+### interop.rs
+Again empty.
+Will provide infrastructure for interfacing rust code with C subsystems.
+
+### interrupt.rs
+Allows rust code to annotate areas of code where local processor interrupts should 
+be disabled, along with actually disabling processor interrupts.
+
+### io.rs
+As name implies memory mapped input output operations.
+
+### ioctl.rs
+contains `ioctl()` number definations.
+
+### iov.rs
+Contains IO vectors.
+
+### irq.rs
+Contains irq abstractions 
+- What is `irq` ?
+An IRQ is an interrupt request from a device it is used to get the CPU's
+attention so it can service a hardware event in a timely manner.
